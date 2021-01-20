@@ -18,36 +18,6 @@ import ProjectSite from '../components/site'
 import md from '@hackclub/markdown'
 import { reverse } from 'lodash'
 
-const Project = ({ slug, month, name, color, url }) => (
-  <Grid
-    xs={24}
-    md={12}
-    lg={6}
-    style={{ scrollSnapAlign: 'start' }}
-  >
-    <Link href={`/${slug}`} passHref>
-      <a >
-        <Card hoverable style={{ overflow: 'hidden', lineHeight: 0 }}>
-          <Card.Content style={{ lineHeight: 1.25 }}>
-            <Text type="secondary" small>
-              {month}
-            </Text>
-            <Text h4>
-              {name}
-            </Text>
-          </Card.Content>
-          <Image
-            src={`/sites/${slug}.png`}
-            width={2732}
-            height={2048}
-            alt={`Screenshot of ${name}`}
-          />
-        </Card>
-      </a>
-    </Link>
-  </Grid>
-)
-
 const Header = () => (
   <Col component="header" className="header" justify="center" align="center">
     <Video mux="PPqmIRFuCQxjJk00M53yoBnNhj02HwaM6zzEhBndLbc300" />
@@ -60,10 +30,14 @@ const Header = () => (
       <User.Link href="https://lachlanjc.com/">@lachlanjc</User.Link>
     </User>
     <Spacer y={1} />
-    <Text h2 h1 style={{ fontSize: 'clamp(2rem, 1rem + 5vw, 4rem)', marginBottom: 0 }}>
+    <Text
+      h2
+      h1
+      style={{ fontSize: 'clamp(2rem, 1rem + 5vw, 4rem)', marginBottom: 0 }}
+    >
       I make lots of websites.
     </Text>
-    <Text style={{ opacity: .875 }} h3 h2>
+    <Text style={{ opacity: 0.875 }} h3 h2>
       Here’s some of my favorites from 2020.
     </Text>
     <Spacer y={4} />
@@ -81,8 +55,8 @@ const Header = () => (
       }
       .header h1,
       .header h2 {
-        text-shadow: 0 1px 2px rgba(0,0,0,0.25),
-                     0 2px 4px rgba(0,0,0,0.25);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25),
+          0 2px 4px rgba(0, 0, 0, 0.25);
       }
       .header video {
         z-index: 0;
@@ -100,6 +74,29 @@ const Header = () => (
   </Col>
 )
 
+const Project = ({ slug, month, name, color, url }) => (
+  <Grid xs={12} md={8} lg={6} style={{ scrollSnapAlign: 'start' }}>
+    <Link href={`/${slug}`} passHref>
+      <a>
+        <Card hoverable style={{ overflow: 'hidden', lineHeight: 0 }}>
+          <Card.Content style={{ lineHeight: 1.25 }}>
+            <Text type="secondary" small>
+              {month}
+            </Text>
+            <Text h4>{name}</Text>
+          </Card.Content>
+          <Image
+            src={`/sites/${slug}.png`}
+            width={2732}
+            height={2048}
+            alt={`Screenshot of ${name}`}
+          />
+        </Card>
+      </a>
+    </Link>
+  </Grid>
+)
+
 const Index = ({ projects }) => {
   const [expanded, setExpanded] = useState(false)
   return (
@@ -115,12 +112,15 @@ const Index = ({ projects }) => {
           background-attachment: fixed;
           background-size: 50px 50px;
         }
-        
       `}</style>
       <Header />
       <Col>
         <Spacer y={2} />
-        <Row component="label" justify="center" style={{ alignItems: 'center' }}>
+        <Row
+          component="label"
+          justify="center"
+          style={{ alignItems: 'center' }}
+        >
           <Toggle
             size="large"
             checked={expanded}
@@ -130,7 +130,9 @@ const Index = ({ projects }) => {
           <Spacer x={0.75} />
           View inline
           <Spacer x={0.25} />
-          <Text small type="secondary">(uses lots of data)</Text>
+          <Text small type="secondary">
+            (uses lots of data)
+          </Text>
         </Row>
         <Spacer y={expanded ? 2 : 0.5} />
       </Col>
@@ -141,15 +143,15 @@ const Index = ({ projects }) => {
           ))}
         </Col>
       ) : (
-          <Grid.Container
-            gap={2}
-            style={{ padding: 'calc(2 * var(--gaid-gap-unit))', margin: '0 auto', scrollSnapType: 'y proximity' }}
-          >
-            {reverse(projects).map(project => (
-              <Project key={project.slug} {...project} />
-            ))}
-          </Grid.Container>
-        )}
+        <Grid.Container
+          gap={2}
+          style={{ margin: '0 auto', scrollSnapType: 'y proximity' }}
+        >
+          {projects.map(project => (
+            <Project key={project.slug} {...project} />
+          ))}
+        </Grid.Container>
+      )}
       <Spacer y={3} />
       {/* <Page.Footer>
         <p>

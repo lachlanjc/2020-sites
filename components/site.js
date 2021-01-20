@@ -29,10 +29,10 @@ const Project = ({
       margin: 0,
       ...(standalone
         ? {
-          padding: '24pt 16pt'
+          padding: '24pt 0'
         }
         : {
-          padding: '48pt 16pt',
+          padding: '48pt 0',
           scrollSnapAlign: 'start'
         })
     }}
@@ -55,16 +55,15 @@ const Project = ({
           {month}
         </Badge>
         <Spacer y={1} />
-        <Text h1>
-          {name}
-        </Text>
-        <Link block icon href={url} >
+        <Text h1>{name}</Text>
+        <Link block icon href={url}>
           {url.replace('https://', '')}
         </Link>
-        {github &&
-          <Link block icon href={github} >
+        {github && (
+          <Link block icon href={github}>
             GitHub
-        </Link>}
+          </Link>
+        )}
       </aside>
       <article dangerouslySetInnerHTML={{ __html: desc }} />
     </header>
@@ -72,25 +71,30 @@ const Project = ({
     <GeistImage.Browser
       invert={color.includes('#f')}
       url={url}
-      style={{ width: '100%', maxWidth: 1280 }}
+      style={{ width: 'calc(100% + 32pt)', maxWidth: 1280 }}
     >
       {/* <Image src={`/projects/${slug}.png`} width={2732} height={2048} alt={`Screenshot of ${name}`} /> */}
       <iframe
         src={embedUrl || url}
         key={embedUrl || url}
-        style={{ width: '100%', height: '75vh' }}
+        style={{ width: '100%', height: standalone ? '87.5vh' : '75vh' }}
         frameBorder={0}
         loading={standalone ? 'eager' : 'lazy'}
       />
     </GeistImage.Browser>
     <style jsx global>{`
+      @media (min-width: 32em) {
+        .project-header {
+          display: grid !important;
+          grid-template-columns: 2fr 3fr;
+          grid-gap: 16pt;
+          align-items: end;
+          max-width: 768pt;
+          margin: auto;
+        }
+      }
       .project-header {
-        display: grid !important;
-        grid-template-columns: 2fr 3fr;
-        grid-gap: 16pt;
-        align-items: end;
-        max-width: 980px;
-        margin: auto;
+        padding: 0 16pt;
       }
       .project-header h1 {
         line-height: 1.125;
@@ -123,6 +127,9 @@ const Project = ({
         text-decoration-thickness: 0.05em;
         text-shadow: 0 0 3px rgba(255, 255, 255, 0.875);
         text-decoration-color: rgba(255, 255, 255, 0.75);
+      }
+      .bowser {
+        perspective: 1px;
       }
     `}</style>
   </Col>

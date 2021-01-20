@@ -13,7 +13,7 @@
     "slug": "hack-club-hackathons",
     "name": "Hack Club Hackathons",
     "desc": "I’ve built a lot of sites for [Hack Club](https://hackclub.com/) over the years. In January, I made [a proposal](https://www.notion.so/hackclub/A-new-era-for-web-at-Hack-Club-37f224e3b22d43e183eea08aa5c62485) that we build sites around Airtable as a database, with Next.js & [Theme UI](https://theme-ui.com) for the frontend, so they can be more “disposable” as various pieces of startup infrastructure change. In two days, I rebuilt our site indexing high school hackathons with the new methodology.",
-    "color": "#ec3750",
+    "color": "#252429",
     "url": "https://hackathons.hackclub.com",
     "github": "https://github.com/hackclub/hackathons"
   },
