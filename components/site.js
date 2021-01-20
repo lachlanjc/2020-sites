@@ -1,10 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import {
   Text,
   Row,
   Spacer,
-  Grid,
   Link,
   Badge,
   Image as GeistImage,
@@ -19,6 +16,7 @@ const Project = ({
   color,
   embedUrl,
   url,
+  github,
   standalone = false,
   ...props
 }) => (
@@ -40,7 +38,7 @@ const Project = ({
     }}
     {...props}
   >
-    <header>
+    <header className="project-header">
       <aside>
         <Badge
           size="large"
@@ -57,17 +55,16 @@ const Project = ({
           {month}
         </Badge>
         <Spacer y={1} />
-        <Text h1 style={{ lineHeight: 1.125 }}>
+        <Text h1>
           {name}
         </Text>
-        <Link
-          block
-          icon
-          href={url}
-          style={{ color: 'inherit', opacity: 0.625, marginLeft: '-5pt' }}
-        >
-          {url}
+        <Link block icon href={url} >
+          {url.replace('https://', '')}
         </Link>
+        {github &&
+          <Link block icon href={github} >
+            GitHub
+        </Link>}
       </aside>
       <article dangerouslySetInnerHTML={{ __html: desc }} />
     </header>
@@ -86,8 +83,8 @@ const Project = ({
         loading={standalone ? 'eager' : 'lazy'}
       />
     </GeistImage.Browser>
-    <style jsx>{`
-      header {
+    <style jsx global>{`
+      .project-header {
         display: grid !important;
         grid-template-columns: 2fr 3fr;
         grid-gap: 16pt;
@@ -95,23 +92,35 @@ const Project = ({
         max-width: 980px;
         margin: auto;
       }
+      .project-header h1 {
+        line-height: 1.125;
+      }
+      .project-header h1 + a {
+        margin-left: -5pt;
+      }
+      .project-header h1 ~ a {
+        opacity: 0.75;
+        color: inherit !important;
+      }
       article {
         max-width: 56ch;
         font-size: 1.125rem;
       }
-      :global(article p) {
+      article p {
         margin: 0;
       }
-      :global(article a) {
+      article a {
         text-decoration: underline;
         text-underline-position: under;
         text-decoration-thickness: 0.2em;
         text-decoration-color: rgba(255, 255, 255, 0.5);
-        transition: text-shadow 0.125s ease-in-out;
+        transition: all 0.125s ease-in-out;
         color: inherit;
       }
-      :global(a):hover,
-      :global(a):focus {
+      article a:hover,
+      article a:focus {
+        text-decoration: underline;
+        text-decoration-thickness: 0.05em;
         text-shadow: 0 0 3px rgba(255, 255, 255, 0.875);
         text-decoration-color: rgba(255, 255, 255, 0.75);
       }

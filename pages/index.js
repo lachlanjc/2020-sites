@@ -7,15 +7,16 @@ import {
   Text,
   Card,
   Spacer,
-  Badge,
   User,
   Row,
   Col,
   Grid,
   Toggle
 } from '@geist-ui/react'
+import Video from '../components/mux'
 import ProjectSite from '../components/site'
 import md from '@hackclub/markdown'
+import { reverse } from 'lodash'
 
 const Project = ({ slug, month, name, color, url }) => (
   <Grid
@@ -47,6 +48,58 @@ const Project = ({ slug, month, name, color, url }) => (
   </Grid>
 )
 
+const Header = () => (
+  <Col component="header" className="header" justify="center" align="center">
+    <Video mux="PPqmIRFuCQxjJk00M53yoBnNhj02HwaM6zzEhBndLbc300" />
+    <Spacer y={2} />
+    <User
+      src="https://github.com/lachlanjc.png"
+      name="2020 in Review"
+      align="left"
+    >
+      <User.Link href="https://lachlanjc.com/">@lachlanjc</User.Link>
+    </User>
+    <Spacer y={1} />
+    <Text h2 h1 style={{ fontSize: 'clamp(2rem, 1rem + 5vw, 4rem)', marginBottom: 0 }}>
+      I make lots of websites.
+    </Text>
+    <Text style={{ opacity: .875 }} h3 h2>
+      Here’s some of my favorites from 2020.
+    </Text>
+    <Spacer y={4} />
+    <style jsx global>{`
+      .header {
+        position: relative;
+        overflow: hidden;
+        line-height: 1.125;
+        min-height: 75vh;
+      }
+      .header * {
+        z-index: 2;
+        color: #fff !important;
+        position: relative;
+      }
+      .header h1,
+      .header h2 {
+        text-shadow: 0 1px 2px rgba(0,0,0,0.25),
+                     0 2px 4px rgba(0,0,0,0.25);
+      }
+      .header video {
+        z-index: 0;
+        position: absolute;
+        top: -25%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      .header .names {
+        flex-direction: column-reverse !important;
+        line-height: 1.5;
+      }
+    `}</style>
+  </Col>
+)
+
 const Index = ({ projects }) => {
   const [expanded, setExpanded] = useState(false)
   return (
@@ -62,27 +115,11 @@ const Index = ({ projects }) => {
           background-attachment: fixed;
           background-size: 50px 50px;
         }
-        header .names {
-          flex-direction: column-reverse !important;
-          line-height: 1.5;
-        }
+        
       `}</style>
-      <Col component="header" justify="center" align="center" style={{ lineHeight: 1.125 }}>
+      <Header />
+      <Col>
         <Spacer y={2} />
-        <User
-          src="https://github.com/lachlanjc.png"
-          name="2020 in Review"
-          align="left"
-        >
-          <User.Link href="https://lachlanjc.com/">@lachlanjc</User.Link>
-        </User>
-        <Spacer y={1} />
-        <Text h2 h1 style={{ marginBottom: 0 }}>
-          I make lots of websites.
-        </Text>
-        <Text type="secondary" h3 h2>
-          Here’s some of my favorites from 2020.
-        </Text>
         <Row component="label" justify="center" style={{ alignItems: 'center' }}>
           <Toggle
             size="large"
@@ -91,11 +128,11 @@ const Index = ({ projects }) => {
             style={{ padding: 0 }}
           />
           <Spacer x={0.75} />
-          View them inline
+          View inline
           <Spacer x={0.25} />
           <Text small type="secondary">(uses lots of data)</Text>
         </Row>
-        <Spacer y={3} />
+        <Spacer y={expanded ? 2 : 0.5} />
       </Col>
       {expanded ? (
         <Col component="main" style={{ scrollSnapType: 'y proximity' }}>
@@ -106,14 +143,14 @@ const Index = ({ projects }) => {
       ) : (
           <Grid.Container
             gap={2}
-            className="list"
             style={{ padding: 'calc(2 * var(--gaid-gap-unit))', margin: '0 auto', scrollSnapType: 'y proximity' }}
           >
-            {projects.map(project => (
+            {reverse(projects).map(project => (
               <Project key={project.slug} {...project} />
             ))}
           </Grid.Container>
         )}
+      <Spacer y={3} />
       {/* <Page.Footer>
         <p>
           Site by <a href="https://lachlanjc.com">@lachlanjc</a>, 2020.{' '}

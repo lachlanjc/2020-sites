@@ -3,7 +3,7 @@
     "month": "January",
     "slug": "gun-funded",
     "name": "Gun Funded",
-    "desc": "",
+    "desc": "I made a visualization of the gun lobby’s $40M+ funding of the U.S. Congress, which I presented in the [NYU Winter 2019 Show for the Recently Possible](https://itp.nyu.edu/shows/winter2019/). Using data from the [Center for Responsive Politics](https://www.opensecrets.org/) & Next.js, the site lets you find your representative, explore by state, & see the bias in funding. ([Project log](https://ima.lachlanjc.com/2019-11-26_cc_final_project/))",
     "color": "#338eda",
     "url": "https://gunfunded.com",
     "github": "https://github.com/lachlanjc/gunfunded"
@@ -57,7 +57,7 @@
     "month": "June",
     "slug": "hack-club-summer",
     "name": "hackclub.com, Summer Edition",
-    "desc": "With high schoolers couped up for the summer, we wanted to do something special for Hack Club’s summer: $50k in hardware grants, a digital scrapbook, live events & AMAs, & stickers. This is the website I made to launch. Summer of Making was a huge success: we sent 1,950 orders of hardware to 28 countries, 7k students from 46 U.S. states and 127 countries requested stickers, Scrapbook took off, & the Hack Club Slack grew 700% after COVID. ([GitHub blog post](https://github.blog/2020-05-28-introducing-hack-clubs-summer-of-making/), [recap site](https://summer.hackclub.com))",
+    "desc": "With high schoolers couped up for the summer, we wanted to do something special for Hack Club’s summer: $50k in hardware grants, a digital scrapbook, live events & AMAs, & stickers. This is the website I made to launch. Summer of Making was a huge success: we sent 1,950 orders of hardware to **28 countries, 7k students** from 46 U.S. states and 127 countries requested stickers, Scrapbook took off, & the Hack Club Slack grew 700% after COVID. ([GitHub blog post](https://github.blog/2020-05-28-introducing-hack-clubs-summer-of-making/), [recap site](https://summer.hackclub.com))",
     "color": "#FF62DC",
     "url": "https://summer.hackclub.com/landing",
     "embedUrl": "https://summer-cv9pqvejx.hackclub.dev/",
@@ -67,7 +67,7 @@
     "month": "July",
     "slug": "hack-club-scrapbook",
     "name": "Hack Club Scrapbook",
-    "desc": "As part of the Summer of Making, I built the Hack Club Scrapbook website, a public, Slack-powered social network for posting what you’re working on. During the summer, over 400 students made 6,000 posts, & this winter it hit nearly 4k users with 10k posts. It was a fully static Next.js site, entirely powered by Airtable (which [I wrote about](https://notebook.lachlanjc.com/2020-07-30_how_scrapbook_works/), & became a [Mux case study](https://mux.com/case-studies/hackclub/)).",
+    "desc": "As part of the Summer of Making, I built the Hack Club Scrapbook website, a public, Slack-powered social network for posting what you’re working on. During the summer, over 400 students made 6,000 posts, & this winter it hit nearly **4k users with 10k posts**. It’s a fully static Next.js site, powered by Airtable (which [I wrote about](https://notebook.lachlanjc.com/2020-07-30_how_scrapbook_works/), & a [Mux case study](https://mux.com/case-studies/hackclub/)).",
     "color": "#f7ff00",
     "url": "https://scrapbook.hackclub.com",
     "github": "https://github.com/hackclub/summer-scrapbook"
@@ -79,13 +79,13 @@
     "desc": "After the Summer of Making wrapped up, we got busy designing our Clubs program for remote schools: free Zoom Pro, live club meetings on Zoom, get paid $200 to write club curriculum, free software. I made this homepage in 3 days outlining the new programs & process for new students.",
     "color": "#5d114c",
     "url": "https://hackclub.com/",
-    "github": "https://github.com/lachlanjc/2019"
+    "github": "https://github.com/hackclub/v3"
   },
   {
     "month": "October",
     "slug": "hack-club-bank",
     "name": "Hack Club Bank",
-    "desc": "",
+    "desc": "Hack Club Bank is a fiscal sponsorship tool, [enabling young people](https://medium.com/hackclub/hack-club-bank-is-now-live-for-everyone-including-you-884f7f54836f) to spin up a nonprofit bank account for a hackathon, club, or nonprofit without worrying about lawyers, accountants, or taxes. Alongside [Max Wofford](https://scrapbook.hackclub.com/msw/), we entirely [rebuilt](https://scrapbook.hackclub.com/r/bank-hackclub/) the debit card system, from the ordering & activation flows to transaction pages & uploading receipts. You're seeing Bank in Transparency Mode, a feature we built for open sourcing your organization's finances.",
     "color": "#ec3750",
     "embedUrl": "/api/bank",
     "url": "https://bank.hackclub.com/hackpenn",
@@ -95,7 +95,7 @@
     "month": "December",
     "slug": "2019-in-review",
     "name": "2019 in Review",
-    "desc": "",
+    "desc": "2020 was really *a year*, so at the end of the year I returned to a project I’d started at the end of 2019, & made a website about my year. I had a lot of fun assembling the story, but especially making the interactive music player, visualizing my Activity rings, & other random touches. Sometimes making websites for things that aren’t important are more fun than major projects.",
     "color": "#2b2363",
     "url": "https://2019.lachlanjc.com",
     "github": "https://github.com/lachlanjc/2019"

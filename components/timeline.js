@@ -1,28 +1,12 @@
-import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Card, Spacer, Col, Row, Text } from '@geist-ui/react'
 import projects from '../data.json'
-import { find } from 'lodash'
 
 const Timeline = () => {
   const router = useRouter()
-  const [index, setIndex] = useState(0)
-  const [project, setProject] = useState({})
 
-  // useEffect(() => {
-  //   const project = projects[index]
-  //   if (router.pathname !== project.slug) {
-  //     router.push(`/${projects.slug}`)
-  //   }
-  // }, [index])
-
-  // useEffect(() => {
-  //   const project = find(projects, { slug: router.pathname })
-  //   setIndex(projects.indexOf(project) + 1)
-  //   setProject(project)
-  // }, [])
   return (
     <Row
       component="nav"
