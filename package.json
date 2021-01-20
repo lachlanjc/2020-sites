@@ -1,0 +1,20 @@
+{
+  "name": "@lachlanjc/2020-sites",
+  "version": "1.0.0",
+  "author": "Lachlan Campbell <lachlanjc@hey.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next"
+  },
+  "dependencies": {
+    "@geist-ui/react": "^2.1.0-canary.2",
+    "@hackclub/markdown": "^0.0.1-alpha.0",
+    "lodash": "^4.17.20",
+    "next": "^10.0.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}

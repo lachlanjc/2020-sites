@@ -1,0 +1,103 @@
+[
+  {
+    "month": "January",
+    "slug": "gun-funded",
+    "name": "Gun Funded",
+    "desc": "",
+    "color": "#338eda",
+    "url": "https://gunfunded.com",
+    "github": "https://github.com/lachlanjc/gunfunded"
+  },
+  {
+    "month": "February",
+    "slug": "hack-club-hackathons",
+    "name": "Hack Club Hackathons",
+    "desc": "I’ve built a lot of sites for [Hack Club](https://hackclub.com/) over the years. In January, I made [a proposal](https://www.notion.so/hackclub/A-new-era-for-web-at-Hack-Club-37f224e3b22d43e183eea08aa5c62485) that we build sites around Airtable as a database, with Next.js & [Theme UI](https://theme-ui.com) for the frontend, so they can be more “disposable” as various pieces of startup infrastructure change. In two days, I rebuilt our site indexing high school hackathons with the new methodology.",
+    "color": "#ec3750",
+    "url": "https://hackathons.hackclub.com",
+    "github": "https://github.com/hackclub/hackathons"
+  },
+  {
+    "month": "March",
+    "slug": "predict-covid19",
+    "name": "Predict COVID-19",
+    "desc": "[Zach Latta](https://zachlatta.com) & I had the idea of making an interactive visualization of COVID based on plotting [countries’ relative paths](https://twitter.com/MarkJHandley/status/1237119688578138112). When we launched, on March 18, the U.S. was 10 days behind Italy’s outbreak. It was the first-ever [Redwood.js](https://redwoodjs.com) app in production (which I [wrote about](https://notebook.lachlanjc.com/2020-03-20_building_predict_covid_with_redwood/)), featured on the [GitHub blog](https://github.blog/2020-03-23-open-collaboration-on-covid-19/#data-visualization). I stopped updating it in the summer after the U.S. made the visualization irrelevant. I also published [testing.predictcovid.com](https://testing.predictcovid.com) to visualize testing, featured on the [Vercel blog](https://vercel.com/blog/we-are-all-in-this-together).",
+    "color": "#e55934",
+    "url": "https://predictcovid.com",
+    "github": "https://github.com/lachlanjc/covid19"
+  },
+  {
+    "month": "April",
+    "slug": "hack-club-covid",
+    "name": "hackclub.com, COVID Edition",
+    "desc": "When lockdown arrived & millions of high schoolers were at home, Hack Club knew we changed to shift our program (coding clubs at high schools) pretty drastically. For COVID, we started our [AMA series](https://hackclub.com/amas/), the [COVID Command Center](https://cccs.hackclub.com) (a series of student-run Zoom workshops), and in 13 hours I built this new homepage, just in time for our [AMA with Elon Musk](https://events.hackclub.com/ama-with-elon-musk/).",
+    "color": "#0f65ff",
+    "url": "https://hackclub-v3-kkzgp3uwf.vercel.app",
+    "github": "https://github.com/hackclub/v3"
+  },
+  {
+    "month": "April",
+    "slug": "covid-global-hackathon",
+    "name": "COVID-19 Global Hackathon",
+    "desc": "After lockdown, Facebook, TikTok, Microsoft, AWS, & others began [organizing](https://www.facebook.com/zuck/posts/10111707674548151) the COVID-19 Global Hackathon, which had Hack Club as the student partner. Working with Facebook’s Communications team, I made the recap website, which got 26k unique visitors & 69k pageviews its first week. ([TikTok’s press release](https://newsroom.tiktok.com/en-us/covid-19-hackathon), [Microsoft’s tweet](https://twitter.com/MSFTIssues/status/1248666537474420740?s=20))",
+    "color": "#4D2DFF",
+    "url": "https://covidglobalhackathon.com",
+    "github": "https://github.com/lachlanjc/globalcovid"
+  },
+  {
+    "month": "May",
+    "slug": "covid19-diary",
+    "name": "COVID-19 Diary",
+    "desc": "I took a nontraditional path to a final assignment for one of my NYU classes, & assembled this diary of some writing & life events.",
+    "color": "#3b47a8",
+    "url": "https://covid19-diary.now.sh",
+    "github": "https://github.com/lachlanjc/covid19-diary"
+  },
+  {
+    "month": "June",
+    "slug": "hack-club-summer",
+    "name": "hackclub.com, Summer Edition",
+    "desc": "With high schoolers couped up for the summer, we wanted to do something special for Hack Club’s summer: $50k in hardware grants, a digital scrapbook, live events & AMAs, & stickers. This is the website I made to launch. Summer of Making was a huge success: we sent 1,950 orders of hardware to 28 countries, 7k students from 46 U.S. states and 127 countries requested stickers, Scrapbook took off, & the Hack Club Slack grew 700% after COVID. ([GitHub blog post](https://github.blog/2020-05-28-introducing-hack-clubs-summer-of-making/), [recap site](https://summer.hackclub.com))",
+    "color": "#FF62DC",
+    "url": "https://summer.hackclub.com/landing",
+    "embedUrl": "https://summer-cv9pqvejx.hackclub.dev/",
+    "github": "https://github.com/hackclub/summer-site"
+  },
+  {
+    "month": "July",
+    "slug": "hack-club-scrapbook",
+    "name": "Hack Club Scrapbook",
+    "desc": "As part of the Summer of Making, I built the Hack Club Scrapbook website, a public, Slack-powered social network for posting what you’re working on. During the summer, over 400 students made 6,000 posts, & this winter it hit nearly 4k users with 10k posts. It was a fully static Next.js site, entirely powered by Airtable (which [I wrote about](https://notebook.lachlanjc.com/2020-07-30_how_scrapbook_works/), & became a [Mux case study](https://mux.com/case-studies/hackclub/)).",
+    "color": "#f7ff00",
+    "url": "https://scrapbook.hackclub.com",
+    "github": "https://github.com/hackclub/summer-scrapbook"
+  },
+  {
+    "month": "September",
+    "slug": "hack-club-clubs",
+    "name": "hackclub.com, Clubs Edition",
+    "desc": "After the Summer of Making wrapped up, we got busy designing our Clubs program for remote schools: free Zoom Pro, live club meetings on Zoom, get paid $200 to write club curriculum, free software. I made this homepage in 3 days outlining the new programs & process for new students.",
+    "color": "#5d114c",
+    "url": "https://hackclub.com/",
+    "github": "https://github.com/lachlanjc/2019"
+  },
+  {
+    "month": "October",
+    "slug": "hack-club-bank",
+    "name": "Hack Club Bank",
+    "desc": "",
+    "color": "#ec3750",
+    "embedUrl": "/api/bank",
+    "url": "https://bank.hackclub.com/hackpenn",
+    "github": ""
+  },
+  {
+    "month": "December",
+    "slug": "2019-in-review",
+    "name": "2019 in Review",
+    "desc": "",
+    "color": "#2b2363",
+    "url": "https://2019.lachlanjc.com",
+    "github": "https://github.com/lachlanjc/2019"
+  }
+]
