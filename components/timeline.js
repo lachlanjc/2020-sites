@@ -15,7 +15,12 @@ const Timeline = () => {
       style={{ paddingTop: '12pt', margin: 0, overflowX: 'auto' }}
     >
       {projects.map(project => (
-        <Link key={project.slug} passHref href={`/${project.slug}`}>
+        <Link
+          key={project.slug}
+          passHref
+          href={`/${project.slug}`}
+          prefetch={false}
+        >
           <Col
             component="a"
             align="center"

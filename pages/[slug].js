@@ -1,12 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Page, Text, Row, Spacer, Grid, Link } from '@geist-ui/react'
+import { Spacer } from '@geist-ui/react'
 import projects from '../data.json'
 import md from '@hackclub/markdown'
 import Timeline from '../components/timeline'
 import Site from '../components/site'
 
-const ProjectPage = ({ project }) => (
+const ProjectPage = ({ project, prevSlug, nextSlug }) => (
   <>
     <Head>
       <title>{project.name} – 2020 Websites – @laclanjc</title>
@@ -19,7 +18,7 @@ const ProjectPage = ({ project }) => (
     `}</style>
     <Timeline />
     <Spacer y={1} />
-    <Site {...project} standalone />
+    <Site {...project} prevSlug={prevSlug} nextSlug={nextSlug} standalone />
   </>
 )
 
@@ -33,7 +32,10 @@ export const getStaticPaths = () => {
 export const getStaticProps = async ({ params }) => {
   const project = projects.find(p => p.slug === params.slug)
   project.desc = await md(project.desc)
-  return { props: { project } }
+  const i = projects.indexOf(project)
+  const prevSlug = i > 0 ? projects[i - 1].slug : null
+  const nextSlug = i < projects.length - 1 ? projects[i + 1].slug : null
+  return { props: { project, prevSlug, nextSlug } }
 }
 
 /*

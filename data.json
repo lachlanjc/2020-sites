@@ -58,7 +58,7 @@
     "slug": "hack-club-summer",
     "name": "hackclub.com, Summer Edition",
     "desc": "With high schoolers couped up for the summer, we wanted to do something special for Hack Club’s summer: $50k in hardware grants, a digital scrapbook, live events & AMAs, & stickers. This is the website I made to launch. Summer of Making was a huge success: we sent 1,950 orders of hardware to **28 countries, 7k students** from 46 U.S. states and 127 countries requested stickers, Scrapbook took off, & the Hack Club Slack grew 700% after COVID. ([GitHub blog post](https://github.blog/2020-05-28-introducing-hack-clubs-summer-of-making/), [recap site](https://summer.hackclub.com))",
-    "color": "#FF62DC",
+    "color": "#FF5B00",
     "url": "https://summer.hackclub.com/landing",
     "embedUrl": "https://summer-cv9pqvejx.hackclub.dev/",
     "github": "https://github.com/hackclub/summer-site"
@@ -95,7 +95,7 @@
     "month": "December",
     "slug": "2019-in-review",
     "name": "2019 in Review",
-    "desc": "2020 was really *a year*, so at the end of the year I returned to a project I’d started at the end of 2019, & made a website about my year. I had a lot of fun assembling the story, but especially making the interactive music player, visualizing my Activity rings, & other random touches. Sometimes making websites for things that aren’t important are more fun than major projects.",
+    "desc": "2020 was really *a year*, so at the end of the year I returned to a project I’d started at the end of 2019, & creating a year in review. I had a lot of fun assembling the story, but especially making the interactive music player, visualizing my Activity rings, & all the little details.",
     "color": "#2b2363",
     "url": "https://2019.lachlanjc.com",
     "github": "https://github.com/lachlanjc/2019"

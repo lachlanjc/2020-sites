@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import {
   Text,
   Card,
@@ -14,14 +15,13 @@ import {
 } from '@geist-ui/react'
 import Video from '../components/mux'
 import ProjectSite from '../components/site'
-import md from '@hackclub/markdown'
+// import md from '@hackclub/markdown'
 
 const Header = () => (
   <Col component="header" className="header" justify="center" align="center">
     <Video
       mux="PPqmIRFuCQxjJk00M53yoBnNhj02HwaM6zzEhBndLbc300"
       aria-label="Time lapse of Lachlan coding a website, filmed from behind the desk"
-      controls={false}
     />
     <Spacer y={2} />
     <User
@@ -72,6 +72,9 @@ const Header = () => (
         width: 100%;
         height: 100%;
       }
+      .header video::-webkit-media-controls {
+        display: none !important;
+      }
       .header .names {
         flex-direction: column-reverse !important;
         line-height: 1.5;
@@ -105,6 +108,17 @@ const Project = ({ slug, month, name, color, url }) => (
 
 const Index = ({ projects }) => {
   const [expanded, setExpanded] = useState(false)
+  const router = useRouter()
+
+  useEffect(
+    () => {
+      if (router.pathname === '/' && expanded) {
+        router.replace('/[slug]', `/${projects[0].slug}`)
+      }
+    },
+    [expanded]
+  )
+
   return (
     <>
       <Head>
@@ -135,19 +149,11 @@ const Index = ({ projects }) => {
           />
           <Spacer x={0.75} />
           View inline
-          <Spacer x={0.25} />
-          <Text small type="secondary">
-            (uses lots of data)
-          </Text>
         </Row>
         <Spacer y={expanded ? 2 : 0.5} />
       </Col>
       {expanded ? (
-        <Col component="main" style={{ scrollSnapType: 'y proximity' }}>
-          {projects.map(project => (
-            <ProjectSite key={project.slug} {...project} />
-          ))}
-        </Col>
+        <ProjectSite {...projects[0]} />
       ) : (
         <Grid.Container
           gap={2}
@@ -179,11 +185,11 @@ export default Index
 
 export const getStaticProps = async () => {
   let projects = require('../data.json')
-  const descs = projects.map(p => p.desc)
-  const html = await Promise.all(descs.map(d => md(d)))
-  projects = projects.map((p, i) => {
-    p.desc = html[i]
-    return p
-  })
+  // const descs = projects.map(p => p.desc)
+  // const html = await Promise.all(descs.map(d => md(d)))
+  // projects = projects.map((p, i) => {
+  //   p.desc = html[i]
+  //   return p
+  // })
   return { props: { projects } }
 }

@@ -5,8 +5,11 @@ import {
   Link,
   Badge,
   Image as GeistImage,
-  Col
+  Col,
+  Breadcrumbs
 } from '@geist-ui/react'
+import NextLink from 'next/link'
+import { GitHub, Grid, ArrowNext, ArrowPrev } from './icons'
 
 const Project = ({
   slug,
@@ -18,6 +21,8 @@ const Project = ({
   url,
   github,
   standalone = false,
+  prevSlug,
+  nextSlug,
   ...props
 }) => (
   <Col
@@ -39,7 +44,12 @@ const Project = ({
     {...props}
   >
     <header className="project-header">
-      <aside>
+      <Row component="header">
+        <NextLink href="/">
+          <Link block title="View all sites">
+            <Grid />
+          </Link>
+        </NextLink>
         <Badge
           size="large"
           style={{
@@ -54,16 +64,43 @@ const Project = ({
         >
           {month}
         </Badge>
-        <Spacer y={1} />
+        <Spacer x={2} style={{ flex: '1 1 auto' }} />
+        <Row component="nav">
+          {prevSlug && (
+            <NextLink href={`/${prevSlug}`}>
+              <Link block title="View previous site">
+                <ArrowPrev />
+                <Spacer x={0.25} />
+              Prev
+            </Link>
+            </NextLink>
+          )}
+          {(prevSlug && nextSlug) && <Spacer x={1} />}
+          {nextSlug && (
+            <NextLink href={`/${nextSlug}`}>
+              <Link block title="View next site">
+                Next
+              <Spacer x={0.25} />
+                <ArrowNext />
+              </Link>
+            </NextLink>
+          )}
+        </Row>
+      </Row>
+      <aside>
+        <Spacer y={0.75} />
         <Text h1>{name}</Text>
-        <Link block icon href={url}>
-          {url.replace('https://', '')}
-        </Link>
-        {github && (
-          <Link block icon href={github}>
-            GitHub
+        <Row component="footer">
+          <Link block icon href={url}>
+            {url.replace('https://', '')}
           </Link>
-        )}
+          {github && (
+            <Link block href={github} style={{ alignItems: 'center' }}>
+              <GitHub width={16} height={16} style={{ marginRight: '6pt' }} />
+              GitHub
+            </Link>
+          )}
+        </Row>
       </aside>
       <article dangerouslySetInnerHTML={{ __html: desc }} />
     </header>
@@ -92,19 +129,38 @@ const Project = ({
           max-width: 768pt;
           margin: auto;
         }
+        .project-header header {
+          grid-column: span 2;
+        }
       }
       .project-header {
         padding: 0 16pt;
       }
-      .project-header h1 {
-        line-height: 1.125;
+      .project-header nav a {
+        color: inherit !important;
+        align-items: center !important;
+        text-transform: uppercase;
       }
-      .project-header h1 + a {
-        margin-left: -5pt;
+      .project-header header,
+      .project-header footer {
+        align-items: center !important;
+        margin-left: -6pt !important;
+        flex-wrap: wrap;
       }
-      .project-header h1 ~ a {
+      .project-header header a:first-child {
+        line-height: 0;
+        margin-right: 12pt;
+      }
+      .project-header footer a {
+        margin-right: 8pt;
+      }
+      .project-header header a,
+      .project-header footer a {
         opacity: 0.75;
         color: inherit !important;
+      }
+      .project-header h1 {
+        line-height: 1.125;
       }
       article {
         max-width: 56ch;
