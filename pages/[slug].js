@@ -33,7 +33,6 @@ export const getStaticPaths = () => {
 export const getStaticProps = async ({ params }) => {
   const project = projects.find(p => p.slug === params.slug)
   project.desc = await md(project.desc)
-  console.log(project.desc)
   return { props: { project } }
 }
 

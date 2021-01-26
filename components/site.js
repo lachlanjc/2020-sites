@@ -29,10 +29,10 @@ const Project = ({
       margin: 0,
       ...(standalone
         ? {
-          padding: '24pt 0'
+          padding: '24pt 12pt'
         }
         : {
-          padding: '48pt 0',
+          padding: '48pt 12pt',
           scrollSnapAlign: 'start'
         })
     }}
@@ -71,7 +71,7 @@ const Project = ({
     <GeistImage.Browser
       invert={color.includes('#f')}
       url={url}
-      style={{ width: 'calc(100% + 32pt)', maxWidth: 1280 }}
+      style={{ width: 1280, maxWidth: '100%' }}
     >
       {/* <Image src={`/projects/${slug}.png`} width={2732} height={2048} alt={`Screenshot of ${name}`} /> */}
       <iframe

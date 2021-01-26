@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
-  Page,
   Text,
   Card,
   Spacer,
@@ -16,11 +15,14 @@ import {
 import Video from '../components/mux'
 import ProjectSite from '../components/site'
 import md from '@hackclub/markdown'
-import { reverse } from 'lodash'
 
 const Header = () => (
   <Col component="header" className="header" justify="center" align="center">
-    <Video mux="PPqmIRFuCQxjJk00M53yoBnNhj02HwaM6zzEhBndLbc300" />
+    <Video
+      mux="PPqmIRFuCQxjJk00M53yoBnNhj02HwaM6zzEhBndLbc300"
+      aria-label="Time lapse of Lachlan coding a website, filmed from behind the desk"
+      controls={false}
+    />
     <Spacer y={2} />
     <User
       src="https://github.com/lachlanjc.png"
@@ -30,14 +32,14 @@ const Header = () => (
       <User.Link href="https://lachlanjc.com/">@lachlanjc</User.Link>
     </User>
     <Spacer y={1} />
-    <Text
-      h2
-      h1
-      style={{ fontSize: 'clamp(2rem, 1rem + 5vw, 4rem)', marginBottom: 0 }}
-    >
+    <Text h1 style={{ fontSize: 'clamp(1.5rem, 1rem + 8vw, 4rem)' }}>
       I make lots of websites.
     </Text>
-    <Text style={{ opacity: 0.875 }} h3 h2>
+    <Text
+      style={{ fontSize: 'clamp(1rem, 1rem + 4vw, 2rem)', opacity: 0.875 }}
+      h3
+      h2
+    >
       Here’s some of my favorites from 2020.
     </Text>
     <Spacer y={4} />
@@ -46,7 +48,9 @@ const Header = () => (
         position: relative;
         overflow: hidden;
         line-height: 1.125;
-        min-height: 75vh;
+        min-height: 384px;
+        height: 75vh;
+        max-height: 768px;
       }
       .header * {
         z-index: 2;
@@ -55,16 +59,18 @@ const Header = () => (
       }
       .header h1,
       .header h2 {
+        line-height: 1.125;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25),
           0 2px 4px rgba(0, 0, 0, 0.25);
       }
       .header video {
         z-index: 0;
         position: absolute;
-        top: -25%;
+        object-fit: cover;
+        top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
+        width: 100%;
+        height: 100%;
       }
       .header .names {
         flex-direction: column-reverse !important;
@@ -145,7 +151,11 @@ const Index = ({ projects }) => {
       ) : (
         <Grid.Container
           gap={2}
-          style={{ margin: '0 auto', scrollSnapType: 'y proximity' }}
+          style={{
+            margin: '0 auto',
+            maxWidth: '100%',
+            scrollSnapType: 'y proximity'
+          }}
         >
           {projects.map(project => (
             <Project key={project.slug} {...project} />

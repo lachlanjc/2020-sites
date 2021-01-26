@@ -48,7 +48,7 @@
     "month": "May",
     "slug": "covid19-diary",
     "name": "COVID-19 Diary",
-    "desc": "I took a nontraditional path to a final assignment for one of my NYU classes, & assembled this diary of some writing & life events.",
+    "desc": "I took a nontraditional path to a final assignment for one of my NYU classes, & assembled this diary of some writing & life events. Built with Next.js & MDX.",
     "color": "#3b47a8",
     "url": "https://covid19-diary.now.sh",
     "github": "https://github.com/lachlanjc/covid19-diary"
