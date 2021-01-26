@@ -99,5 +99,14 @@
     "color": "#2b2363",
     "url": "https://2019.lachlanjc.com",
     "github": "https://github.com/lachlanjc/2019"
+  },
+  {
+    "month": "December",
+    "slug": "centre-sustains",
+    "name": "Centre Sustains",
+    "desc": "Working with [Pam Adams](https://www.linkedin.com/in/pam-adams-0ba92611), my local government’s Sustainability Planner, I designed & built this website for Centre Sustains, my town’s public outreach effort for climate planning & sustainability legislation.",
+    "color": "#0b9e43",
+    "url": "https://centresustains.com",
+    "github": "https://github.com/lachlanjc/centresustains"
   }
 ]
