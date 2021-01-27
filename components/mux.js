@@ -11,7 +11,6 @@ const Video = ({ mux, ...props }) => {
       const video = videoRef.current
       if (!video) return
 
-      video.controls = true
       let hls
 
       if (video.canPlayType('application/vnd.apple.mpegurl')) {
