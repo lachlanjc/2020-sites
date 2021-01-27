@@ -7,6 +7,7 @@ import { Text, Card, Spacer, Row, Col, Grid, Toggle } from '@geist-ui/react'
 import Video from '../components/mux'
 import Author from '../components/author'
 import ProjectSite from '../components/site'
+import projects from '../data.json'
 
 const Header = () => (
   <Col component="header" className="header" justify="center" align="center">
@@ -21,9 +22,8 @@ const Header = () => (
       I make lots of websites.
     </Text>
     <Text
-      style={{ fontSize: 'clamp(1rem, 1rem + 4vw, 2rem)', opacity: 0.875 }}
-      h3
       h2
+      style={{ fontSize: 'clamp(1rem, 1rem + 4vw, 2rem)', opacity: 0.875 }}
     >
       Here’s some of my favorites from 2020.
     </Text>
@@ -88,7 +88,7 @@ const Project = ({ slug, month, name }) => (
   </Grid>
 )
 
-const Index = ({ projects }) => {
+const Index = () => {
   const [expanded, setExpanded] = useState(false)
   const router = useRouter()
 
@@ -117,7 +117,7 @@ const Index = ({ projects }) => {
       `}</style>
       <Header />
       <Col>
-        <Spacer y={2} />
+        <Spacer y={1.5} />
         <Row
           component="label"
           justify="center"
@@ -130,9 +130,9 @@ const Index = ({ projects }) => {
             style={{ padding: 0 }}
           />
           <Spacer x={0.75} />
-          View inline
+          View in series
         </Row>
-        <Spacer y={expanded ? 2 : 0.5} />
+        <Spacer y={1} />
       </Col>
       {expanded ? (
         <ProjectSite {...projects[0]} />
@@ -155,11 +155,12 @@ const Index = ({ projects }) => {
       <Text
         type="secondary"
         align="center"
-        style={{ maxWidth: '32ch', margin: 'auto' }}
+        style={{ maxWidth: '28ch', margin: 'auto' }}
       >
-        Video from March 2019, of me building the{' '}
-        <Link href="https://hackclub.com/bank/">Hack Club Bank site</Link> in
-        San Francisco.
+        Video by <Link href="https://maxwofford.com">@msw</Link> of me building
+        the{' '}
+        <Link href="https://hackclub.com/bank/">Hack&nbsp;Club Bank site</Link>,
+        March 2019.
       </Text>
       <Spacer y={1} />
       <Author github />
@@ -169,8 +170,3 @@ const Index = ({ projects }) => {
 }
 
 export default Index
-
-export const getStaticProps = async () => {
-  let projects = require('../data.json')
-  return { props: { projects } }
-}
