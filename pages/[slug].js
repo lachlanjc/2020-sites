@@ -37,6 +37,8 @@ export const getStaticProps = async ({ params }) => {
   return { props: { project, prevSlug, nextSlug } }
 }
 
+export const config = { amp: 'hybrid' }
+
 /*
   {
     "month": "May",
