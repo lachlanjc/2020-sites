@@ -2,14 +2,13 @@ import Head from 'next/head'
 import { Spacer } from '@geist-ui/react'
 import projects from '../data.json'
 import md from '@hackclub/markdown'
+import Meta from '../components/meta'
 import Timeline from '../components/timeline'
 import Site from '../components/site'
 
 const ProjectPage = ({ project, prevSlug, nextSlug }) => (
   <>
-    <Head>
-      <title>{project.name} – 2020 Websites – @laclanjc</title>
-    </Head>
+    <Meta title={project.name} />
     <style>{`
       body {
         background-color: ${project.color};

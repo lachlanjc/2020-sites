@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { Text, Card, Spacer, Row, Col, Grid, Toggle } from '@geist-ui/react'
+
+import Meta from '../components/meta'
 import Video from '../components/mux'
 import Author from '../components/author'
 import ProjectSite from '../components/site'
@@ -103,9 +104,7 @@ const Index = () => {
 
   return (
     <>
-      <Head>
-        <title>2020 Websites – @lachlanjc</title>
-      </Head>
+      <Meta />
       <style jsx global>{`
         body {
           background-image: radial-gradient(#e3e3e3 1px, transparent 0),
