@@ -57,14 +57,7 @@ const Project = ({
       backgroundColor: color,
       color: color.includes('#f') ? '#222' : '#fff',
       margin: 0,
-      ...(standalone
-        ? {
-          padding: '24pt 12pt'
-        }
-        : {
-          padding: '48pt 12pt',
-          scrollSnapAlign: 'start'
-        })
+      padding: `${standalone ? 24 : 12}pt 12pt`
     }}
     {...props}
   >
@@ -115,7 +108,6 @@ const Project = ({
       url={url}
       style={{ width: 1280, maxWidth: '100%' }}
     >
-      {/* <Image src={`/projects/${slug}.png`} width={2732} height={2048} alt={`Screenshot of ${name}`} /> */}
       <iframe
         src={embedUrl || url}
         key={embedUrl || url}

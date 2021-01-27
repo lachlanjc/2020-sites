@@ -3,20 +3,10 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import {
-  Text,
-  Card,
-  Spacer,
-  User,
-  Row,
-  Col,
-  Grid,
-  Toggle
-} from '@geist-ui/react'
+import { Text, Card, Spacer, Row, Col, Grid, Toggle } from '@geist-ui/react'
 import Video from '../components/mux'
 import Author from '../components/author'
 import ProjectSite from '../components/site'
-// import md from '@hackclub/markdown'
 
 const Header = () => (
   <Col component="header" className="header" justify="center" align="center">
@@ -74,7 +64,7 @@ const Header = () => (
   </Col>
 )
 
-const Project = ({ slug, month, name, color, url }) => (
+const Project = ({ slug, month, name }) => (
   <Grid xs={12} md={8} lg={6} style={{ scrollSnapAlign: 'start' }}>
     <Link href={`/${slug}`} passHref>
       <a>
@@ -90,6 +80,7 @@ const Project = ({ slug, month, name, color, url }) => (
             width={2732}
             height={2048}
             alt={`Screenshot of ${name}`}
+            sizes="25vw"
           />
         </Card>
       </a>
@@ -147,9 +138,10 @@ const Index = ({ projects }) => {
         <ProjectSite {...projects[0]} />
       ) : (
         <Grid.Container
-          gap={2}
+          gap={1}
           style={{
             margin: '0 auto',
+            padding: '0 6pt',
             maxWidth: '100%',
             scrollSnapType: 'y proximity'
           }}
@@ -159,15 +151,19 @@ const Index = ({ projects }) => {
           ))}
         </Grid.Container>
       )}
-      <Spacer y={3} />
-      {/* <Page.Footer>
-        <p>
-          Site by <a href="https://lachlanjc.com">@lachlanjc</a>, 2020.{' '}
-          <a href="https://github.com/lachlanjc/2020-sites">
-            Open source on GitHub
-          </a>
-        </p>
-      </Page.Footer> */}
+      <Spacer y={1.5} />
+      <Text
+        type="secondary"
+        align="center"
+        style={{ maxWidth: '32ch', margin: 'auto' }}
+      >
+        Video from March 2019, of me building the{' '}
+        <Link href="https://hackclub.com/bank/">Hack Club Bank site</Link> in
+        San Francisco.
+      </Text>
+      <Spacer y={1} />
+      <Author github />
+      <Spacer y={2} />
     </>
   )
 }
@@ -176,11 +172,5 @@ export default Index
 
 export const getStaticProps = async () => {
   let projects = require('../data.json')
-  // const descs = projects.map(p => p.desc)
-  // const html = await Promise.all(descs.map(d => md(d)))
-  // projects = projects.map((p, i) => {
-  //   p.desc = html[i]
-  //   return p
-  // })
   return { props: { projects } }
 }
