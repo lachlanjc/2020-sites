@@ -1,4 +1,5 @@
 import { GeistProvider, CssBaseline } from '@geist-ui/react'
+import PlausibleProvider from 'next-plausible'
 
 const theme = {
   font: {
@@ -9,10 +10,12 @@ const theme = {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <GeistProvider theme={theme}>
-      <CssBaseline />
-      <Component {...pageProps} />
-    </GeistProvider>
+    <PlausibleProvider domain="2020-sites.lachlanjc.com">
+      <GeistProvider theme={theme}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </GeistProvider>
+    </PlausibleProvider>
   )
 }
 
