@@ -5,11 +5,35 @@ import {
   Link,
   Badge,
   Image as GeistImage,
-  Col,
-  Breadcrumbs
+  Col
 } from '@geist-ui/react'
 import NextLink from 'next/link'
 import { GitHub, Grid, ArrowNext, ArrowPrev } from './icons'
+import Author from '../components/author'
+
+const Nav = ({ prevSlug, nextSlug, ...props }) => (
+  <Row component="nav" {...props}>
+    {prevSlug && (
+      <NextLink href={`/${prevSlug}`}>
+        <Link block title="View previous site">
+          <ArrowPrev />
+          <Spacer x={0.25} />
+          Prev
+        </Link>
+      </NextLink>
+    )}
+    {prevSlug && nextSlug && <Spacer x={0.75} />}
+    {nextSlug && (
+      <NextLink href={`/${nextSlug}`}>
+        <Link block title="View next site">
+          Next
+          <Spacer x={0.25} />
+          <ArrowNext />
+        </Link>
+      </NextLink>
+    )}
+  </Row>
+)
 
 const Project = ({
   slug,
@@ -28,6 +52,7 @@ const Project = ({
   <Col
     id={slug}
     gap={2}
+    className="project"
     style={{
       backgroundColor: color,
       color: color.includes('#f') ? '#222' : '#fff',
@@ -64,28 +89,8 @@ const Project = ({
         >
           {month}
         </Badge>
-        <Spacer x={2} style={{ flex: '1 1 auto' }} />
-        <Row component="nav">
-          {prevSlug && (
-            <NextLink href={`/${prevSlug}`}>
-              <Link block title="View previous site">
-                <ArrowPrev />
-                <Spacer x={0.25} />
-              Prev
-            </Link>
-            </NextLink>
-          )}
-          {(prevSlug && nextSlug) && <Spacer x={1} />}
-          {nextSlug && (
-            <NextLink href={`/${nextSlug}`}>
-              <Link block title="View next site">
-                Next
-              <Spacer x={0.25} />
-                <ArrowNext />
-              </Link>
-            </NextLink>
-          )}
-        </Row>
+        <Spacer y={2} style={{ flex: '1 1 auto' }} />
+        <Nav prevSlug={prevSlug} nextSlug={nextSlug} />
       </Row>
       <aside>
         <Spacer y={0.75} />
@@ -97,7 +102,7 @@ const Project = ({
           {github && (
             <Link block href={github} style={{ alignItems: 'center' }}>
               <GitHub width={16} height={16} style={{ marginRight: '6pt' }} />
-              GitHub
+              Source code
             </Link>
           )}
         </Row>
@@ -119,12 +124,21 @@ const Project = ({
         loading={standalone ? 'eager' : 'lazy'}
       />
     </GeistImage.Browser>
+    <Spacer y={2} />
+    {standalone && (
+      <>
+        <Nav prevSlug={prevSlug} nextSlug={nextSlug} justify="center" />
+        <Spacer y={1} />
+        <Row component="footer" align="center" justify="center">
+          <Author github />
+        </Row>
+        <Spacer y={1} />
+      </>
+    )}
     <style jsx global>{`
       @media (min-width: 32em) {
         .project-header {
-          display: grid !important;
           grid-template-columns: 2fr 3fr;
-          grid-gap: 16pt;
           align-items: end;
           max-width: 768pt;
           margin: auto;
@@ -134,12 +148,18 @@ const Project = ({
         }
       }
       .project-header {
-        padding: 0 16pt;
+        display: grid !important;
+        grid-gap: 16pt;
       }
-      .project-header nav a {
+      .project nav a {
         color: inherit !important;
         align-items: center !important;
         text-transform: uppercase;
+      }
+      @media (max-width: 32em) {
+        .project-header nav span {
+          display: none;
+        }
       }
       .project-header header,
       .project-header footer {
@@ -186,6 +206,11 @@ const Project = ({
       }
       .bowser {
         perspective: 1px;
+      }
+      .names a,
+      .names a:hover,
+      .names span {
+        color: inherit !important;
       }
     `}</style>
   </Col>

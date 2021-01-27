@@ -21,7 +21,7 @@
     "month": "March",
     "slug": "predict-covid19",
     "name": "Predict COVID-19",
-    "desc": "[Zach Latta](https://zachlatta.com) & I had the idea of making an interactive visualization of COVID based on plotting [countries’ relative paths](https://twitter.com/MarkJHandley/status/1237119688578138112). When we launched, on March 18, the U.S. was 10 days behind Italy’s outbreak. It was the first-ever [Redwood.js](https://redwoodjs.com) app in production (which I [wrote about](https://notebook.lachlanjc.com/2020-03-20_building_predict_covid_with_redwood/)), featured on the [GitHub blog](https://github.blog/2020-03-23-open-collaboration-on-covid-19/#data-visualization). I stopped updating it in the summer after the U.S. made the visualization irrelevant. I also published [testing.predictcovid.com](https://testing.predictcovid.com) to visualize testing, featured on the [Vercel blog](https://vercel.com/blog/we-are-all-in-this-together).",
+    "desc": "[Zach Latta](https://zachlatta.com) & I had the idea of making an **interactive visualization of COVID** based on plotting [countries’ relative paths](https://twitter.com/MarkJHandley/status/1237119688578138112). (When we launched, on March 18, the U.S. was 10 days behind Italy’s outbreak.) It was the first-ever [Redwood.js](https://redwoodjs.com) app [in production](https://notebook.lachlanjc.com/2020-03-20_building_predict_covid_with_redwood/) & featured by the [GitHub blog](https://github.blog/2020-03-23-open-collaboration-on-covid-19/#data-visualization). I stopped updating it in the summer after the U.S. made the visualization irrelevant. I also published [testing.predictcovid.com](https://testing.predictcovid.com) to visualize testing, featured on the [Vercel blog](https://vercel.com/blog/we-are-all-in-this-together).",
     "color": "#e55934",
     "url": "https://predictcovid.com",
     "github": "https://github.com/lachlanjc/covid19"
@@ -48,7 +48,7 @@
     "month": "May",
     "slug": "covid19-diary",
     "name": "COVID-19 Diary",
-    "desc": "I took a nontraditional path to a final assignment for one of my NYU classes, & assembled this diary of some writing & life events. Built with Next.js & MDX.",
+    "desc": "I took a nontraditional path to a final assignment for one of my NYU classes, & assembled this diary of some writing & life events, combined with my photos & websites I built then. Feels quaint, looking back now.",
     "color": "#3b47a8",
     "url": "https://covid19-diary.now.sh",
     "github": "https://github.com/lachlanjc/covid19-diary"
@@ -57,7 +57,7 @@
     "month": "June",
     "slug": "hack-club-summer",
     "name": "hackclub.com, Summer Edition",
-    "desc": "With high schoolers couped up for the summer, we wanted to do something special for Hack Club’s summer: $50k in hardware grants, a digital scrapbook, live events & AMAs, & stickers. This is the website I made to launch. Summer of Making was a huge success: we sent 1,950 orders of hardware to **28 countries, 7k students** from 46 U.S. states and 127 countries requested stickers, Scrapbook took off, & the Hack Club Slack grew 700% after COVID. ([GitHub blog post](https://github.blog/2020-05-28-introducing-hack-clubs-summer-of-making/), [recap site](https://summer.hackclub.com))",
+    "desc": "With Hack Clubbers couped up for the summer, we wanted to do something special. This was our **homepage to launch the Summer of Making**: $50k in hardware grants, a digital scrapbook, live events & AMAs, & stickers. It was huge success—we sent 1,950 orders of hardware to **28 countries, 7k students** from 46 U.S. states and 127 countries got stickers, Scrapbook took off, & the Hack Club Slack grew 700% after COVID. ([GitHub blog post](https://github.blog/2020-05-28-introducing-hack-clubs-summer-of-making/), [recap](https://summer.hackclub.com))",
     "color": "#FF5B00",
     "url": "https://summer.hackclub.com/landing",
     "embedUrl": "https://summer-cv9pqvejx.hackclub.dev/",
@@ -78,6 +78,7 @@
     "name": "hackclub.com, Clubs Edition",
     "desc": "After the Summer of Making wrapped up, we got busy designing our Clubs program for remote schools: free Zoom Pro, live club meetings on Zoom, get paid $200 to write club curriculum, free software. I made this homepage in 3 days outlining the new programs & process for new students.",
     "color": "#5d114c",
+    "embedUrl": "https://hackclub.lachlanjc.com/",
     "url": "https://hackclub.com/",
     "github": "https://github.com/hackclub/v3"
   },
@@ -85,7 +86,7 @@
     "month": "October",
     "slug": "hack-club-bank",
     "name": "Hack Club Bank",
-    "desc": "Hack Club Bank is a fiscal sponsorship tool, [enabling young people](https://medium.com/hackclub/hack-club-bank-is-now-live-for-everyone-including-you-884f7f54836f) to spin up a nonprofit bank account for a hackathon, club, or nonprofit without worrying about lawyers, accountants, or taxes. Alongside [Max Wofford](https://scrapbook.hackclub.com/msw/), we entirely [rebuilt](https://scrapbook.hackclub.com/r/bank-hackclub/) the debit card system, from the ordering & activation flows to transaction pages & uploading receipts. You're seeing Bank in Transparency Mode, a feature we built for open sourcing your organization's finances.",
+    "desc": "Hack Club Bank is a fiscal sponsorship tool, [enabling young people](https://medium.com/hackclub/hack-club-bank-is-now-live-for-everyone-including-you-884f7f54836f) to spin up a nonprofit bank account for a hackathon, club, or nonprofit without worrying about lawyers, accountants, or taxes. [Max Wofford](https://scrapbook.hackclub.com/msw/) & I entirely [rebuilt](https://scrapbook.hackclub.com/r/bank-hackclub/) the debit card system this falll, from the ordering & activation flows to transaction pages & uploading receipts. You’re seeing Bank in Transparency Mode, a feature we built for open sourcing your organization’s finances.",
     "color": "#ec3750",
     "embedUrl": "/api/bank",
     "url": "https://bank.hackclub.com/hackpenn",
@@ -95,7 +96,7 @@
     "month": "December",
     "slug": "2019-in-review",
     "name": "2019 in Review",
-    "desc": "2020 was really *a year*, so at the end of the year I returned to a project I’d started at the end of 2019, & creating a year in review. I had a lot of fun assembling the story, but especially making the interactive music player, visualizing my Activity rings, & all the little details.",
+    "desc": "2020 was really *a year*, so at the end of the year I returned to a project I’d started at the end of 2019: creating a year in review. I had a lot of fun assembling the story, but especially making the interactive music player for the Music page, visualizing my Activity rings, & all the little design details.",
     "color": "#2b2363",
     "url": "https://2019.lachlanjc.com",
     "github": "https://github.com/lachlanjc/2019"
@@ -104,7 +105,7 @@
     "month": "December",
     "slug": "centre-sustains",
     "name": "Centre Sustains",
-    "desc": "Working with [Pam Adams](https://www.linkedin.com/in/pam-adams-0ba92611), my local government’s Sustainability Planner, I designed & built this website for Centre Sustains, my town’s public outreach effort for climate planning & sustainability legislation.",
+    "desc": "Working with [Pam Adams](https://www.linkedin.com/in/pam-adams-0ba92611), my local government’s Sustainability Planner, I designed & built this website for Centre Sustains, my town’s public outreach effort for climate planning & sustainability legislation. I’m especially proud of the [page explaining how climate change impacts our area](https://centresustains.com/climate).",
     "color": "#0b9e43",
     "url": "https://centresustains.com",
     "github": "https://github.com/lachlanjc/centresustains"

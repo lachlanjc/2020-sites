@@ -14,6 +14,7 @@ import {
   Toggle
 } from '@geist-ui/react'
 import Video from '../components/mux'
+import Author from '../components/author'
 import ProjectSite from '../components/site'
 // import md from '@hackclub/markdown'
 
@@ -24,13 +25,7 @@ const Header = () => (
       aria-label="Time lapse of Lachlan coding a website, filmed from behind the desk"
     />
     <Spacer y={2} />
-    <User
-      src="https://github.com/lachlanjc.png"
-      name="2020 in Review"
-      align="left"
-    >
-      <User.Link href="https://lachlanjc.com/">@lachlanjc</User.Link>
-    </User>
+    <Author />
     <Spacer y={1} />
     <Text h1 style={{ fontSize: 'clamp(1.5rem, 1rem + 8vw, 4rem)' }}>
       I make lots of websites.
@@ -74,10 +69,6 @@ const Header = () => (
       }
       .header video::-webkit-media-controls {
         display: none !important;
-      }
-      .header .names {
-        flex-direction: column-reverse !important;
-        line-height: 1.5;
       }
     `}</style>
   </Col>
