@@ -1,13 +1,10 @@
-import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import { Text, Card, Spacer, Row, Col, Grid, Toggle } from '@geist-ui/react'
 
 import Meta from '../components/meta'
 import Video from '../components/mux'
 import Author from '../components/author'
-import ProjectSite from '../components/site'
 import projects from '../data.json'
 
 const Header = () => (
@@ -19,15 +16,8 @@ const Header = () => (
     <Spacer y={2} />
     <Author />
     <Spacer y={1} />
-    <Text h1 style={{ fontSize: 'clamp(1.5rem, 1rem + 8vw, 4rem)' }}>
-      I make lots of websites.
-    </Text>
-    <Text
-      h2
-      style={{ fontSize: 'clamp(1rem, 1rem + 4vw, 2rem)', opacity: 0.875 }}
-    >
-      Here’s some of my favorites from 2020.
-    </Text>
+    <Text h1>I make lots of websites.</Text>
+    <Text h2>Here’s some of my favorites from 2020.</Text>
     <Spacer y={4} />
     <style jsx global>{`
       .header {
@@ -49,6 +39,14 @@ const Header = () => (
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25),
           0 2px 4px rgba(0, 0, 0, 0.25);
       }
+      .header h1 {
+        font-size: clamp(1.5rem, 1rem + 8vw, 4rem);
+      }
+      .header h2 {
+        font-size: clamp(1rem, 1rem + 4vw, 2rem);
+        padding: 0 6pt;
+        opacity: 0.875;
+      }
       .header video {
         z-index: 0;
         position: absolute;
@@ -57,9 +55,6 @@ const Header = () => (
         left: 0;
         width: 100%;
         height: 100%;
-      }
-      .header video::-webkit-media-controls {
-        display: none !important;
       }
     `}</style>
   </Col>
@@ -89,83 +84,62 @@ const Project = ({ slug, month, name }) => (
   </Grid>
 )
 
-const Index = () => {
-  const [expanded, setExpanded] = useState(false)
-  const router = useRouter()
-
-  useEffect(
-    () => {
-      if (router.pathname === '/' && expanded) {
-        router.replace('/[slug]', `/${projects[0].slug}`)
+const Index = () => (
+  <>
+    <Meta />
+    <style jsx global>{`
+      body {
+        background-image: radial-gradient(#e3e3e3 1px, transparent 0),
+          radial-gradient(#e3e3e3 1px, transparent 0);
+        background-position: 0 0, 25px 25px;
+        background-attachment: fixed;
+        background-size: 50px 50px;
       }
-    },
-    [expanded]
-  )
-
-  return (
-    <>
-      <Meta />
-      <style jsx global>{`
-        body {
-          background-image: radial-gradient(#e3e3e3 1px, transparent 0),
-            radial-gradient(#e3e3e3 1px, transparent 0);
-          background-position: 0 0, 25px 25px;
-          background-attachment: fixed;
-          background-size: 50px 50px;
-        }
-      `}</style>
-      <Header />
-      <Col>
-        <Spacer y={1.5} />
+    `}</style>
+    <Header />
+    <Col>
+      <Spacer y={1.5} />
+      <Link href={`/${projects[0].slug}`} passHref>
         <Row
-          component="label"
+          component="a"
           justify="center"
-          style={{ alignItems: 'center' }}
+          style={{ alignItems: 'center', color: '#000' }}
         >
-          <Toggle
-            size="large"
-            checked={expanded}
-            onChange={e => setExpanded(e.target.checked)}
-            style={{ padding: 0 }}
-          />
+          <Toggle size="large" style={{ padding: 0 }} />
           <Spacer x={0.75} />
           View in series
         </Row>
-        <Spacer y={1} />
-      </Col>
-      {expanded ? (
-        <ProjectSite {...projects[0]} />
-      ) : (
-        <Grid.Container
-          gap={1}
-          style={{
-            margin: '0 auto',
-            padding: '0 6pt',
-            maxWidth: '100%',
-            scrollSnapType: 'y proximity'
-          }}
-        >
-          {projects.map(project => (
-            <Project key={project.slug} {...project} />
-          ))}
-        </Grid.Container>
-      )}
-      <Spacer y={1.5} />
-      <Text
-        type="secondary"
-        align="center"
-        style={{ maxWidth: '28ch', margin: 'auto' }}
-      >
-        Video by <Link href="https://maxwofford.com">@msw</Link> of me building
-        the{' '}
-        <Link href="https://hackclub.com/bank/">Hack&nbsp;Club Bank site</Link>,
-        March 2019.
-      </Text>
+      </Link>
       <Spacer y={1} />
-      <Author github />
-      <Spacer y={2} />
-    </>
-  )
-}
+    </Col>
+    <Grid.Container
+      gap={1}
+      style={{
+        margin: '0 auto',
+        padding: '0 6pt',
+        maxWidth: '100%',
+        scrollSnapType: 'y proximity'
+      }}
+    >
+      {projects.map(project => (
+        <Project key={project.slug} {...project} />
+      ))}
+    </Grid.Container>
+    <Spacer y={1.5} />
+    <Text
+      type="secondary"
+      align="center"
+      style={{ maxWidth: '28ch', margin: 'auto' }}
+    >
+      Video by <Link href="https://maxwofford.com">@msw</Link> of me building
+      the{' '}
+      <Link href="https://hackclub.com/bank/">Hack&nbsp;Club Bank site</Link>,
+      March 2019.
+    </Text>
+    <Spacer y={1} />
+    <Author github />
+    <Spacer y={2} />
+  </>
+)
 
 export default Index
