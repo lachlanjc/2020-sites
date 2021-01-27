@@ -143,5 +143,3 @@ const Index = () => (
 )
 
 export default Index
-
-export const config = { amp: 'hybrid' }
