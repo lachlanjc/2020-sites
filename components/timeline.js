@@ -8,12 +8,7 @@ const Timeline = () => {
   const router = useRouter()
 
   return (
-    <Row
-      component="nav"
-      gap={1}
-      className="timeline"
-      style={{ paddingTop: '12pt', margin: 0, overflowX: 'auto' }}
-    >
+    <Row component="nav" gap={1} className="timeline">
       {projects.map(project => (
         <Link
           key={project.slug}
@@ -39,12 +34,19 @@ const Timeline = () => {
         </Link>
       ))}
       <style jsx global>{`
+        .timeline {
+          padding-top: 12pt;
+          margin: 0 !important;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+        }
         .timeline a {
           color: inherit;
           min-width: 72px;
           max-width: 128px;
           text-align: center;
           line-height: 1.25;
+          scroll-snap-align: start;
         }
         .timeline a.active {
           filter: drop-shadow(0 0 5px white);
