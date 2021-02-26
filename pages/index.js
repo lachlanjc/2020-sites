@@ -17,7 +17,7 @@ const Header = () => (
     <Author />
     <Spacer y={1} />
     <Text h1>I make lots of websites.</Text>
-    <Text h2>Here’s some of my favorites from 2020.</Text>
+    <Text h2>Here’re some of my favorites from 2020.</Text>
     <Spacer y={4} />
     <style jsx global>{`
       .header {
