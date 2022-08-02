@@ -23,8 +23,8 @@
     "name": "Predict COVID-19",
     "desc": "[Zach Latta](https://zachlatta.com) & I had the idea of making an **interactive visualization of COVID** based on plotting [countries’ relative paths](https://twitter.com/MarkJHandley/status/1237119688578138112). (When we launched, on March 18, the U.S. was 10 days behind Italy’s outbreak.) It was the first-ever [Redwood.js](https://redwoodjs.com) app [in production](https://notebook.lachlanjc.com/2020-03-20_building_predict_covid_with_redwood/) & featured by the [GitHub blog](https://github.blog/2020-03-23-open-collaboration-on-covid-19/#data-visualization). I stopped updating it in the summer after the U.S. made the visualization irrelevant. I also published [testing.predictcovid.com](https://testing.predictcovid.com) to visualize testing, featured on the [Vercel blog](https://vercel.com/blog/we-are-all-in-this-together).",
     "color": "#e55934",
-    "url": "https://predictcovid.com",
-    "github": "https://github.com/lachlanjc/covid19"
+    "url": "https://predictcovid.netlify.app/",
+    "github": "https://github.com/lachlanjc/predictcovid"
   },
   {
     "month": "April",
@@ -50,7 +50,7 @@
     "name": "COVID-19 Diary",
     "desc": "I took a nontraditional path to a final assignment for one of my NYU classes, & assembled this diary of some writing & life events, combined with my photos & websites I built then. Feels quaint, looking back now.",
     "color": "#3b47a8",
-    "url": "https://covid19-diary.now.sh",
+    "url": "https://covid19-diary.vercel.app",
     "github": "https://github.com/lachlanjc/covid19-diary"
   },
   {
